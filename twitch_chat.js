@@ -24,6 +24,15 @@ const { api, chat } = new TwitchJS({ token, username });
 
 
 
+
+
+function checkJS() {
+	alert('This is JS');
+}
+
+
+
+
 var num_voting_options = 4;
 
 var most_vote;
@@ -44,7 +53,7 @@ function findWinners(arr) {
 }
 
 const handleMessage = message => {
-
+	// state management
 
 	if( message.message === '!A') {
 		console.log('Vote for A')
@@ -84,3 +93,5 @@ chat.on(TwitchJS.Chat.Events.ALL, handleMessage);
 chat.connect().then(() => {
 	chat.join(channel);
 });
+
+
